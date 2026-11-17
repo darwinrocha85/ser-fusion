@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 # Los datos nunca entran en el repositorio: viven en SER_DATA
-data/
+/data/
 *.csd
 *.h5
 *.npy
