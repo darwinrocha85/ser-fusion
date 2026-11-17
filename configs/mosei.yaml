@@ -1,0 +1,31 @@
+# CMU-MOSEI — fuentes de datos.
+# El servidor oficial (immortal.multicomp.cs.cmu.edu) no responde desde este equipo (comprobado 2026-11-17).
+# Se usa un espejo no oficial en Hugging Face. Cada archivo se verifica contra el SHA-256 publicado
+# por el propio espejo (puntero LFS) y la integridad semántica se contrasta con fuentes oficiales:
+# los folds estándar del SDK de CMU (GitHub) y las cifras del artículo original (Zadeh et al., ACL 2018).
+
+dataset: mosei
+seed: 42
+
+source:
+  mirror: https://huggingface.co/datasets/reeha-parkar/cmu-mosei-comp-seq
+  revision: main            # se fija a un commit concreto en cuanto se descargue (ver raw/mosei/SOURCE.json)
+  files:
+    labels:
+      path: data/CMU_MOSEI_Labels.csd
+      sha256: fba2589e91b6f325        # prefijo; el hash completo se resuelve y registra al descargar
+    words:
+      path: data/CMU_MOSEI_TimestampedWords.csd
+      sha256: 8cc97323b100d914
+    glove:
+      path: data/CMU_MOSEI_TimestampedWordVectors.csd
+      sha256: 04b893e1d028c537
+    facet:
+      path: data/CMU_MOSEI_VisualFacet42.csd
+      sha256: a42fc9eb6f2f010e
+    covarep:
+      path: data/CMU_MOSEI_COVAREP.csd
+      sha256: e0242228010773d8
+
+official_folds:
+  url: https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/master/mmsdk/mmdatasdk/dataset/standard_datasets/CMU_MOSEI/cmu_mosei_std_folds.py
